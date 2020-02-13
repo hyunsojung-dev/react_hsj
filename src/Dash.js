@@ -31,6 +31,8 @@ import Link2 from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import NotificationsIcon from '@material-ui/icons/Notifications';
+
+// list ui를 위한 패키지 설정
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -50,7 +52,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link2 color="inherit" href="https://hyunsojung-dev.github.io/react-certificate/">
+      <Link2 color="inherit" href="https://hyunsojung-dev.github.io/react_hsj/">
         정보처리기사
       </Link2>{' '}
       {new Date().getFullYear()}
