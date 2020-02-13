@@ -233,8 +233,8 @@ function LoginForm({ authenticated, login, location }) {
         </Snackbar>
         {/* </div> */}
         <section>
-          <button style={btnStyle} onClick={openModal} >회원가입</button>
-              {/* <Button variant="outlined" onClick={openModal} > 회원가입 </Button>               */}
+          {/* <button style={btnStyle} onClick={openModal} >회원가입</button> */}
+              <Button variant="outlined" onClick={openModal} > 회원가입 </Button>              
                 {/* <Modal visible={visible} width="400" height="400" effect="fadeInUp"   onClickAway={closeModal}> */}
                 <Modal visible={visible} effect="fadeInUp"   onClickAway={closeModal}>
                     <div>
