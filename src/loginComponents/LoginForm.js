@@ -76,18 +76,34 @@ function LoginForm({ authenticated, login, location }) {
 
   // server&DB 에서 유효성 검사 후 유효 혹은 에러 발생
   const getUsers = (newUser) => {
-    try {
-      return axios.post('/login/user', newUser);
-    } catch (error) {
-      console.error(error)
-    }
+    return axios.post('/login/user', newUser)
+    .then(response => { 
+      console.log(response)
+    })
+    .catch(error => {
+        console.log(error.response)
+    });
+    
+    // try {
+    //   return 
+    //   // axios.post('/login/user', newUser);
+    // } catch (error) {
+    //   console.error(error)
+    // }
   };
   const getoverlaps = (overlapEmail) => {
-    try {
-      return axios.post('/login/sign/overlap', overlapEmail);
-    } catch (error) {
-      console.error(error)
-    }
+    return axios.post('/login/sign/overlap', overlapEmail)
+    .then(response => { 
+      console.log(response)
+    })
+    .catch(error => {
+        console.log(error.response)
+    });
+    // try {
+    //   // return axios.post('/login/sign/overlap', overlapEmail);
+    // } catch (error) {
+    //   console.error(error)
+    // }
   };
 
   function Alert(props) {
@@ -143,7 +159,7 @@ function LoginForm({ authenticated, login, location }) {
             .then(res => console.log(res.data))
             .catch(function (error) {
               if (error){
-                console.log(error);
+                console.log(error.res);
                 alert('중복 아이디가 있습니다.');
                 setERROR('err');
               }
