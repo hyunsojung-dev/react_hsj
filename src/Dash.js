@@ -7,11 +7,10 @@ import { signIn } from './loginComponents/auth';
 import AuthRoute from './loginComponents/AuthRoute';
 import LoginForm from './loginComponents/LoginForm';
 import LogoutButton from './loginComponents/logoutForm';
-//import Problem from './component/containers/Problem';
+import Problem from './containers/Problem';
 import Homeview from './containers/First-Home';
-//import YearComment from './component/containers/evaluation'
+import YearComment from './containers/evaluation'
 // list_item 설정
-//import { secondaryListItems } from './component/List_Item';
 // @material-ui 설정
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -35,6 +34,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import AnnouncementRoundedIcon from '@material-ui/icons/AnnouncementRounded';
 import CreateRoundedIcon from '@material-ui/icons/CreateRounded';
 import ImportContactsRoundedIcon from '@material-ui/icons/ImportContactsRounded';
@@ -172,14 +173,20 @@ export default function Dashboard() {
         open={state.left} onClose={toggleDrawer('left', false)}
       >
         {sideList('left')}
-        {/* <List>{secondaryListItems}</List> */}
+        <ListSubheader inset>Saved reports</ListSubheader>
+        <ListItem button>
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary="user information" />
+        </ListItem>
       </Drawer>
       <main >
         <div />
         {/* <Container maxWidth="lg" className={classes.container}> */}
          <Switch>
             <Route exact path="/" component={Homeview}/>
-            {/* <Route
+            <Route
               path="/login"
               render={props => (
               <LoginForm authenticated={authenticated} login={login} {...props} />
@@ -191,7 +198,7 @@ export default function Dashboard() {
             <AuthRoute
               authenticated={authenticated}
               path="/comment"
-              render={props => <YearComment user={user} {...props} />} />                */}
+              render={props => <YearComment user={user} {...props} />} />               
          </Switch>
           <Box pt={6}>
             <Copyright />
