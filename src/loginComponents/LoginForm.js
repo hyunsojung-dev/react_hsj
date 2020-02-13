@@ -77,14 +77,14 @@ function LoginForm({ authenticated, login, location }) {
   // server&DB 에서 유효성 검사 후 유효 혹은 에러 발생
   const getUsers = (newUser) => {
     try {
-      return axios.post('https://hyunsojung-dev.github.io/react_hsj/login/user', newUser);
+      return axios.post('/login/user', newUser);
     } catch (error) {
       console.error(error)
     }
   };
   const getoverlaps = (overlapEmail) => {
     try {
-      return axios.post('https://hyunsojung-dev.github.io/react_hsj/login/sign/overlap', overlapEmail);
+      return axios.post('/login/sign/overlap', overlapEmail);
     } catch (error) {
       console.error(error)
     }
