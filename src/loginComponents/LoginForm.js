@@ -139,7 +139,7 @@ function LoginForm({ authenticated, login, location }) {
           user_birthday: user_birthday,
           user_password: user_password
         };
-        axios.post('https://hyunsojung-dev.github.io/react_hsj/login/sign/add', newUser)
+        axios.post('/login/sign/add', newUser)
             .then(res => console.log(res.data))
             .catch(function (error) {
               if (error){
