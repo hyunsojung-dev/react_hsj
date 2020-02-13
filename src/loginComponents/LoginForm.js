@@ -77,14 +77,14 @@ function LoginForm({ authenticated, login, location }) {
   // server&DB 에서 유효성 검사 후 유효 혹은 에러 발생
   const getUsers = (newUser) => {
     try {
-      return axios.post('/login/user', newUser);
+      return axios.post('https://hyunsojung-dev.github.io/react_hsj/login/user', newUser);
     } catch (error) {
       console.error(error)
     }
   };
   const getoverlaps = (overlapEmail) => {
     try {
-      return axios.post('/login/sign/overlap', overlapEmail);
+      return axios.post('https://hyunsojung-dev.github.io/react_hsj/login/sign/overlap', overlapEmail);
     } catch (error) {
       console.error(error)
     }
@@ -139,7 +139,7 @@ function LoginForm({ authenticated, login, location }) {
           user_birthday: user_birthday,
           user_password: user_password
         };
-        axios.post('/login/sign/add', newUser)
+        axios.post('https://hyunsojung-dev.github.io/react_hsj/login/sign/add', newUser)
             .then(res => console.log(res.data))
             .catch(function (error) {
               if (error){
@@ -201,10 +201,10 @@ function LoginForm({ authenticated, login, location }) {
   return (
     <><Router>
     <div style={{margin: 25}}>      
-    <div>LOGIN</div>
+    <div style={{marginLeft: 10}}>LOGIN</div>
       <form className={classes.root} noValidate autoComplete="off">
       {/* <form noValidate autoComplete="off"> */}
-        <div className={classes.item}>
+        <div style={{width: 300}} >
         <TextField
           required
           id="filled-required"

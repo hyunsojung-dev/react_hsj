@@ -15,7 +15,6 @@ const Problem_Answer = props => (
     <td>{props.problem.problem_answer}</td>
   </tr>  
 )
-
 const btnStyle = {
   color: "white",
   background: "black",
@@ -52,7 +51,7 @@ class Home extends Component {
     // this.state = { showPopup: false, random: 1 }; 
   }
   componentDidMount() {
-    axios.get('http://hyunsojung-dev.github.io/react_hsj/view/')
+    axios.get('https://hyunsojung-dev.github.io/react_hsj/view/')
         .then(response => {
             this.setState({ problems: response.data });
         })
