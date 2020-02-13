@@ -9,8 +9,8 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 
-    <App />, 
-    // <Dash/>,
+    // <App />, 
+    <Dash/>,
     // <Router>
     //     <Route exact path="/" component={Dash} />  
     //     {/* <Route path="/Problem" component={Problem} />
