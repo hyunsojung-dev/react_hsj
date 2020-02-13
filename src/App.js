@@ -4,26 +4,13 @@ import './css/App.css';
 import Dash from './Dash';
 function App() {
   return (
-      <div>
-          <Dash/>
-          {this.props.children}
-      </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+      // <div>
+      //     <Dash/>
+      //     {this.props.children}
+      // </div>
+    <div className="App">
+      <div>안녕하세요, 새로운 리액트 앱 화면 입니다.</div>
+    </div>
   );
 }
 

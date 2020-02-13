@@ -9,12 +9,13 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 
-    // <App />, 
-    <Router>
-        <Route exact path="/" component={Dash} />  
-        {/* <Route path="/Problem" component={Problem} />
-        <Route path="/login" component={evaluation}/> */}
-    </Router>,
+    <App />, 
+    // <Dash/>,
+    // <Router>
+    //     <Route exact path="/" component={Dash} />  
+    //     {/* <Route path="/Problem" component={Problem} />
+    //     <Route path="/login" component={evaluation}/> */}
+    // </Router>,
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
