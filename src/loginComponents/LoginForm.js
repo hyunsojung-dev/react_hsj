@@ -13,7 +13,18 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-
+const btnStyle = {
+  color: "white",
+  background: "black",
+  width: "300px",
+  padding: ".375rem .75rem",
+  border: "1px solid white",
+  borderRadius: ".25rem",
+  fontSize: "1rem",
+  lineHeight: 1.5,
+  textAlign:"center",
+  marginTop: 10
+};
 const useStyles = makeStyles(theme => ({
   root: {
     '& > *': {
@@ -189,8 +200,7 @@ function LoginForm({ authenticated, login, location }) {
 
   return (
     <><Router>
-    <div //style={{margin: 25}}
-    >      
+    <div style={{margin: 25}}>      
     <div>LOGIN</div>
       <form className={classes.root} noValidate autoComplete="off">
       {/* <form noValidate autoComplete="off"> */}
@@ -215,13 +225,16 @@ function LoginForm({ authenticated, login, location }) {
         />
         </div>
         <div >
-        <Button variant="outlined" onClick={onSubmit} >submit</Button>
+        {/* <Button variant="outlined" onClick={onSubmit} >submit</Button> */}
+        <button style={btnStyle} onClick={onSubmit} >submit</button>
+
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error" >가입되지 않은 아이디이거나, 잘못된 패스워드 입니다.</Alert>
         </Snackbar>
         {/* </div> */}
         <section>
-              <Button variant="outlined" onClick={openModal} > 회원가입 </Button>              
+          <button style={btnStyle} onClick={openModal} >회원가입</button>
+              {/* <Button variant="outlined" onClick={openModal} > 회원가입 </Button>               */}
                 {/* <Modal visible={visible} width="400" height="400" effect="fadeInUp"   onClickAway={closeModal}> */}
                 <Modal visible={visible} effect="fadeInUp"   onClickAway={closeModal}>
                     <div>

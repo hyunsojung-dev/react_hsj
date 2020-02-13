@@ -5,21 +5,6 @@ import Popup from "reactjs-popup";
 //import { textAlign } from '@material-ui/system';
 import axios from 'axios';
 
-// test용 리스트 
-const list = [
-  {  'num': 1,  'problem': 'test 문제1',  'answer': 'test 답1'  },
-  {
-  'num': 2,
-  'problem': 'test 문제2',
-  'answer': 'test 답2'
-  },
-  {
-  'num': 3,
-  'problem': 'test 문제3',
-  'answer': 'test 답3'
-  }
-]
-
 const Problem_Info = props => ( 
   <tr>
     <td>{props.problem.problem_info}</td>
