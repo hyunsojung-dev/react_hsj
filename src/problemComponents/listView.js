@@ -49,7 +49,7 @@ export default class TodosList extends Component {
     }
     
     componentDidMount() {
-        axios.get('https://hyunsojung-dev.github.io/react_hsj/Problem/')
+        axios.get('http://localhost:7376/Problem/')
             .then(response => {
                 this.setState({ todos: response.data });
             })
