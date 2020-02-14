@@ -76,7 +76,7 @@ function LoginForm({ authenticated, login, location }) {
 
   // server&DB 에서 유효성 검사 후 유효 혹은 에러 발생
   const getUsers = (newUser) => {
-    return axios.post('/login/user', newUser)
+    return axios.post('https://hyunsojung-dev.github.io/login/user', newUser)
     .then(response => { 
       console.log(response)
     })
@@ -92,7 +92,7 @@ function LoginForm({ authenticated, login, location }) {
     // }
   };
   const getoverlaps = (overlapEmail) => {
-    return axios.post('/login/sign/overlap', overlapEmail)
+    return axios.post('https://hyunsojung-dev.github.io/login/sign/overlap', overlapEmail)
     .then(response => { 
       console.log(response)
     })
@@ -155,7 +155,7 @@ function LoginForm({ authenticated, login, location }) {
           user_birthday: user_birthday,
           user_password: user_password
         };
-        axios.post('/login/sign/add', newUser)
+        axios.post('https://hyunsojung-dev.github.io/login/sign/add', newUser)
             .then(res => console.log(res.data))
             .catch(function (error) {
               if (error){

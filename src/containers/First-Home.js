@@ -51,13 +51,13 @@ class Home extends Component {
     // this.state = { showPopup: false, random: 1 }; 
   }
   componentDidMount() {
-    axios.get('http://hyunsojung-dev.github.io/view/')
+    axios.get('https://hyunsojung-dev.github.io/react_hsj/view/')
         .then(response => {
             this.setState({ problems: response.data });
         })
-        .catch(function (error){
-            console.log(error);
-          })
+        .catch(error => {
+            console.log(error.response)
+        });
   }
 
   onView_ProblemInfo(){

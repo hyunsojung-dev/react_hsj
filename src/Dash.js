@@ -117,7 +117,7 @@ export default function Dashboard() {
     >
       <Divider />
           <div>
-              <Link to="/" >
+              <Link to="/react_hsj/" >
               <ListItem button>
                 <ListItemIcon>
                   <AnnouncementRoundedIcon />
