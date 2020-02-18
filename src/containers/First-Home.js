@@ -51,7 +51,7 @@ class Home extends Component {
     // this.state = { showPopup: false, random: 1 }; 
   }
   componentDidMount() {
-    axios.get('https://hyunsojung-dev.github.io/react_hsj/view/')
+    axios.get('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/view/')
         .then(response => {
             this.setState({ problems: response.data });
         })

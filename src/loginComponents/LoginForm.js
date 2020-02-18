@@ -8,7 +8,7 @@ import '../css/LoginForm.css';
 //import Image from '../../img/iconlogin.png';
 // material-ui 사용 : styles, textField, button, alert
 import { makeStyles } from '@material-ui/core/styles';
-import { Alert, AlertTitle } from '@material-ui/lab';
+//import { Alert, AlertTitle } from '@material-ui/lab';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -57,7 +57,7 @@ function LoginForm({ authenticated, login, location }) {
   const [user_password, setPW] = useState('');
   const [user_birthday, setBIRTH] = useState('');
   const [visible, setVB] = useState('');
-  const [error, setERROR] = useState('');
+  //const [error, setERROR] = useState('');
   // 로그인 form DB setting
   const [login_email, setlogin_Email] = useState('');
   const [login_password, setlogin_PW] = useState('');
@@ -120,7 +120,7 @@ function LoginForm({ authenticated, login, location }) {
         login_email: login_email,
         login_password: login_password
       };
-      const usrs = getUsers(newLogin).then(res => {
+      getUsers(newLogin).then(res => {
         if (res.data===login_email){
           console.log(res.data);
           login({ login_email, login_password });
@@ -155,13 +155,12 @@ function LoginForm({ authenticated, login, location }) {
           user_birthday: user_birthday,
           user_password: user_password
         };
-        axios.post('https://hyunsojung-dev.github.io/login/sign/add', newUser)
+        axios.post('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/login/sign/add', newUser)
             .then(res => console.log(res.data))
             .catch(function (error) {
               if (error){
                 console.log(error.res);
                 alert('중복 아이디가 있습니다.');
-                setERROR('err');
               }
               else if(error!=='err') {
               }

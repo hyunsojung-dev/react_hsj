@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import App from './App';
+// import App from './App';
 import Dash from './Dash';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
+// import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
 
 import * as serviceWorker from './serviceWorker';
 

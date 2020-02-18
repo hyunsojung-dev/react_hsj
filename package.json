@@ -52,6 +52,5 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
-  },
-  "homepage": "https://hyunsojung-dev.github.io/react_hsj"
+  }
 }

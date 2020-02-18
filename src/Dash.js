@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // react version 4 이기 때문에 react-router가 아니라 react-router-dom을 사용해야함 (버전마다 상이하게 다름)
 // 리액트 v3 정적라우팅 , v4 동적 라우팅
 import { Link, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
@@ -12,24 +12,24 @@ import Homeview from './containers/First-Home';
 import YearComment from './containers/evaluation'
 // list_item 설정
 // @material-ui 설정
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
+// import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
-import Container from '@material-ui/core/Container';
+// import Badge from '@material-ui/core/Badge';
+// import Container from '@material-ui/core/Container';
 // import Grid from '@material-ui/core/Grid';
 // import Paper from '@material-ui/core/Paper';
 import Link2 from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import NotificationsIcon from '@material-ui/icons/Notifications';
 
 // list ui를 위한 패키지 설정
@@ -88,7 +88,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Dashboard() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+ // const [open, setOpen] = React.useState(true);
   // user 
   const [user, setUser] = useState(null);
   const authenticated = user != null;
@@ -117,7 +117,7 @@ export default function Dashboard() {
     >
       <Divider />
           <div>
-              <Link to="/react_hsj/" >
+              <Link to="/view" >
               <ListItem button>
                 <ListItemIcon>
                   <AnnouncementRoundedIcon />

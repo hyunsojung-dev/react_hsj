@@ -49,7 +49,7 @@ export default class TodosList extends Component {
     }
     
     componentDidMount() {
-        axios.get('http://localhost:7376/Problem/')
+        axios.get('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/Problem/')
             .then(response => {
                 this.setState({ todos: response.data });
             })
