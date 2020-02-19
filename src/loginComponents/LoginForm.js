@@ -16,14 +16,14 @@ import MuiAlert from '@material-ui/lab/Alert';
 const btnStyle = {
   color: "white",
   background: "black",
-  width: "300px",
+  width: "190px",
   padding: ".375rem .75rem",
   border: "1px solid white",
   borderRadius: ".25rem",
   fontSize: "1rem",
   lineHeight: 1.5,
   textAlign:"center",
-  marginTop: 10
+  marginBottom: 10 
 };
 const useStyles = makeStyles(theme => ({
   root: {
@@ -76,12 +76,16 @@ function LoginForm({ authenticated, login, location }) {
 
   // server&DB 에서 유효성 검사 후 유효 혹은 에러 발생
   const getUsers = (newUser) => {
-    return axios.post('https://hyunsojung-dev.github.io/login/user', newUser)
+    return axios.post('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/login/user', newUser)
     .then(response => { 
-      console.log(response)
+      console.log('리액트에서 난리났음.');
+      console.log(response);
+      console.log(response.body.user_email);
+      return response.body.user_email
     })
     .catch(error => {
         console.log(error.response)
+        return false;
     });
     
     // try {
@@ -92,9 +96,10 @@ function LoginForm({ authenticated, login, location }) {
     // }
   };
   const getoverlaps = (overlapEmail) => {
-    return axios.post('https://hyunsojung-dev.github.io/login/sign/overlap', overlapEmail)
+    return axios.post('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/login/sign/overlap', overlapEmail)
     .then(response => { 
-      console.log(response)
+      console.log(response.data)
+      return response.data
     })
     .catch(error => {
         console.log(error.response)
@@ -120,12 +125,12 @@ function LoginForm({ authenticated, login, location }) {
         login_email: login_email,
         login_password: login_password
       };
-      getUsers(newLogin).then(res => {
-        if (res.data===login_email){
-          console.log(res.data);
+      const getuser = getUsers(newLogin).then(res => {
+        if (res===login_email){
+          console.log(res);
           login({ login_email, login_password });
         }
-        else if (res.data==='false'){
+        else if (res===false){
           //alert('로그인 실패, 다시 시도해주세요.');
           setOpen(true);
           console.log('=> err_location : react login form에서 로그인 실패.');
@@ -190,13 +195,13 @@ function LoginForm({ authenticated, login, location }) {
       user_email: user_email
     };
     const overs = getoverlaps(overlapEmail).then(res => {
-      if (res.data==='false'){
+      if (res==='false'){
         alert('중복 아이디 존재');
       }
-      else if(res.data===""){
+      else if(res===""){
         alert('아이디를 입력해주세요.');
       }
-      else if (res.data==='true'){
+      else if (res==='true'){
         alert('아이디 사용가능');
       }
     }) 
@@ -293,8 +298,8 @@ function LoginForm({ authenticated, login, location }) {
                           </div>
                           <div style={{ marginTop: 15}}>
                               <Button variant="outlined" onClick={SignOnclick} >submit</Button> </div> 
-                          <div style={{ textAlign: "left", margin: 15}}>
-                              <a href="javascript:void(0);" onClick={closeModal}>Close</a>   </div>                          
+                          {/* <div style={{ textAlign: "left", margin: 15}}>
+                              <a href="javascript:void(0);" onClick={closeModal}>Close</a>   </div>                           */}
                         </form>    
                         </div>                                     
                       </div>                        

@@ -83,7 +83,7 @@ export default class CreateTodo extends Component {
     //     console.log(error.response)
     // });
 
-    axios.post('/Problem/add', newTodo)
+    axios.post('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/Problem/add', newTodo)
         .then(res => console.log(res.data));
 
     this.setState({
@@ -101,7 +101,7 @@ export default class CreateTodo extends Component {
                 <h3>Create New Problem</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
-                        <label>문제 : </label>
+                        <label>문제: </label>
                             <TextareaAutosize aria-label="minimum height" rows={3} placeholder="요청하시고자 하는 문제의 상세 내용을 적어주세요." 
                                 className="form-control"
                                 value={this.state.todo_description}
@@ -122,6 +122,7 @@ export default class CreateTodo extends Component {
                                 onChange={this.onChangeTodoResponsible}
                                 />
                     </div>
+                    <div>어려운 정도:</div>
                     <div className="form-group">
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
-//import Dialog from 'react-bootstrap-dialog'
 import Moment from 'react-moment';
-// import trashImage from '../../../../src/img/icon-trash.png';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Table } from 'react-bootstrap';
+
+// img import
+import delete_icon from '../../src/img/delete_icon.png';
+import edit_icon from'../img/edit_icon.png';
 
 const btnStyle = {
     color: "white",
@@ -29,11 +31,11 @@ const Todo = props => (
     <td><Moment format="YYYY/MM/DD">{props.todo.todo_createdAt}</Moment></td>
     <td>
         {/* <Link to={"/Problem/edit/"+props.todo._id} className="btn btn-primary" >Edit</Link> */}
-        <Link to={"/Problem/edit/"+props.todo._id} >수정</Link>
+        <Link to={"/Problem/edit/"+props.todo._id} ><img src={edit_icon} width="20" height="20"/></Link>
     </td>
     <td> 
         <form method='POST' action={`/Problem/delete/${props.todo._id}` } >
-            <button style={btnStyle} ><DeleteIcon/></button>
+            <button style={btnStyle} ><img src={delete_icon} width="20" height="20"/></button>
          </form>
     </td>
 </tr>
@@ -86,8 +88,8 @@ export default class TodosList extends Component {
                             <th>문제</th>
                             <th>정답</th>
                             {/* <th>단계</th> */}
-                            <th>Date</th>
-                            <th>Action</th>
+                            <th>date</th>
+                            <th>edit</th>
                             <th>delete</th>
                         </tr>
                     </thead>

@@ -124,7 +124,7 @@ export default class problemList extends Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:7376/comment/2018')
+        axios.get('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/comment/2018')
             .then(response => {
                 this.setState({ problems: response.data });
             })

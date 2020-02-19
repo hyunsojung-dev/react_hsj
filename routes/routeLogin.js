@@ -112,8 +112,9 @@ LoginRoute.route('/naverInCallback').get(function(req, res) {
               if(docs) {
                   console.log('중복아이디 존재');
                   console.log(docs);   
+                  console.log(docs.data);
                   //res.json(docs[0].user_email);
-                  res.json('false');          
+                  res.json('false');        
               } else {
                   // 결과가 없음. 로그인 실패
                   console.log('중복 아이디 없음.');

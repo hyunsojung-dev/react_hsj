@@ -24,7 +24,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 // import Badge from '@material-ui/core/Badge';
-// import Container from '@material-ui/core/Container';
+import Container from '@material-ui/core/Container';
 // import Grid from '@material-ui/core/Grid';
 // import Paper from '@material-ui/core/Paper';
 import Link2 from '@material-ui/core/Link';
@@ -52,7 +52,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link2 color="inherit" href="https://hyunsojung-dev.github.io/react_hsj/">
+      <Link2 color="inherit" href="http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/">
         정보처리기사
       </Link2>{' '}
       {new Date().getFullYear()}
@@ -117,7 +117,7 @@ export default function Dashboard() {
     >
       <Divider />
           <div>
-              <Link to="/view" >
+              <Link to="/" >
               <ListItem button>
                 <ListItemIcon>
                   <AnnouncementRoundedIcon />
@@ -125,7 +125,7 @@ export default function Dashboard() {
                 <ListItemText primary="문제 풀기" /> 
               </ListItem> 
               </Link>    
-              <Link to="/Problem" >
+              <Link to="/Problem/" >
               <ListItem button>
                 <ListItemIcon>
                   <CreateRoundedIcon />
@@ -133,7 +133,7 @@ export default function Dashboard() {
                 <ListItemText primary="문제 요청" />
               </ListItem>
               </Link>
-              <Link to="/comment" >
+              <Link to="/comment/" >
               <ListItem button>
                 <ListItemIcon>
                   <ImportContactsRoundedIcon />
@@ -157,18 +157,13 @@ export default function Dashboard() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             React Certificate
           </Typography>
-          <div style={{ float: "right", marginRight: 5}}>{authenticated ? (
+          {/* <div style={{ float: "right", marginRight: 5}}>{authenticated ? (
                 <LogoutButton logout={logout} />              
                 ) : (
                 <Link to="/login">
                     <div style={{fontSize: 16}}>Login</div>
                 </Link>
-                )}</div>
-          {/* <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton> */}
+                )}</div> */}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -184,28 +179,27 @@ export default function Dashboard() {
         </ListItem>
       </Drawer>
       <main >
-        <div />
-        {/* <Container maxWidth="lg" className={classes.container}> */}
          <Switch>
             <Route exact path="/" component={Homeview}/>
-            <Route
+            <Route path ="/problem" component = {Problem}/>
+            <Route path ="/comment" component = {YearComment}/>
+            {/* <Route
               path="/login"
               render={props => (
               <LoginForm authenticated={authenticated} login={login} {...props} />
-              )} />
-            <AuthRoute
+              )} /> */}
+            {/* <AuthRoute
               authenticated={authenticated}
               path="/Problem"
-              render={props => <Problem user={user} {...props} /> }  />           
-            <AuthRoute
+              render={props => <Problem user={user} {...props} /> }  />            */}
+            {/* <AuthRoute
               authenticated={authenticated}
               path="/comment"
-              render={props => <YearComment user={user} {...props} />} />               
+              render={props => <YearComment user={user} {...props} />} />                */}
          </Switch>
           <Box pt={6}>
             <Copyright />
           </Box>
-        {/* </Container>  */}
       </main>
     </div>
     </Router>

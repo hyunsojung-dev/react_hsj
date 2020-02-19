@@ -29,6 +29,13 @@ app.use(function(req, res, next) {
   });
   
 
+// Port setting
+const port = 7376;
+app.listen(port, function(){
+  console.log("➡️ server on! 7376 port!");
+});
+
+
 app.use('/', express.static(path.resolve(__dirname,'../build')));
 
 
@@ -40,16 +47,11 @@ console.log(path.resolve(__dirname,'../build'));
 //Router
 //라우터 설정 에러 문제 problem url 이후의 router 설정이기 때문에 /Problem/ 으로 나타내야함.
 const HomeRoute = express.Router();
-
-app.use('/view/', require("../routes/routeHomeview")); // home 문제 랜덤 리스트 뿌려주는 라우터
+RouterHome = require("../routes/routeHomeView");
+app.use('/view/', RouterHome); // home 문제 랜덤 리스트 뿌려주는 라우터
 app.use("/Problem/", require("../routes/routeProblem")); // 사용자들의 문제 요청 리스트 라우터
 app.use('/comment/', require("../routes/routeYear")); // 3번째 뷰의 년도별 문제 리스트 라우터
 app.use('/login/', require("../routes/routeLogin")); // Login 후 View 화면
 app.use('/home/', HomeRoute); // Login 후 View 화면
 //app.use('api/account/', require("../routes/account")); 
 
-// Port setting
-const port = 7376;
-app.listen(port, function(){
-  console.log("➡️ server on! 7376 port!");
-});

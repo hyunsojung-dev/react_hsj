@@ -6,14 +6,14 @@ import Popup from "reactjs-popup";
 import axios from 'axios';
 
 const Problem_Info = props => ( 
-  <tr>
-    <td>{props.problem.problem_info}</td>
-  </tr>  
+  <div>
+    {props.problem.problem_info}
+  </div>  
 )
 const Problem_Answer = props => ( 
-  <tr>
-    <td>{props.problem.problem_answer}</td>
-  </tr>  
+  <div>
+    {props.problem.problem_answer}
+  </div>  
 )
 const btnStyle = {
   color: "white",

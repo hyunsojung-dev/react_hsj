@@ -65,10 +65,10 @@ export default class EditTodo extends Component {
             todo_description: this.state.todo_description,
             todo_responsible: this.state.todo_responsible,
             todo_priority: this.state.todo_priority,
-            todo_createdAt: this.state.todo_createdAt
+            todo_createdAt: Date.now
         };
         console.log(obj);
-        axios.post('/Problem/edit/'+this.props.match.params.id, obj)
+        axios.post('http://ec2-18-219-213-176.us-east-2.compute.amazonaws.com:7376/Problem/edit/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
         this.props.history.push('/Problem/');
@@ -96,6 +96,7 @@ export default class EditTodo extends Component {
                                 onChange={this.onChangeTodoResponsible}
                                 />
                     </div>
+                    <div>어려운 정도: </div>
                     <div className="form-group">
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
@@ -132,22 +133,6 @@ export default class EditTodo extends Component {
                         </div>
                     </div>
                     <div className="form-group" onChange={this.onChangecreateAt}>{this.state.todo_createdAt} </div>
-                    {/* <div className="form-check">
-                        <input  className="form-check-input"
-                                id="completedCheckbox"
-                                type="checkbox"
-                                name="completedCheckbox"
-                                onChange={this.onChangeTodoCompleted}
-                                checked={this.state.todo_completed}
-                                value={this.state.todo_completed}
-                                />
-                        <label className="form-check-label" htmlFor="completedCheckbox">
-                            Completed
-                        </label>                        
-                    </div> */}
-
-                    <br/>
-
                     <div className="form-group">
                         <input type="submit" value="update problem" className="btn btn-primary" />
                     </div>

@@ -11,7 +11,7 @@ problemRoutes.route ('/'). get (function (req, res) {
           console.log (err); 
       } else { 
          res.json(todos) ; 
-         console.log("problem/ router");
+         console.log("server에서 잘 통신함. 경로 : problem/ router !");
          //res.redirect("/");
       } 
   }); 
